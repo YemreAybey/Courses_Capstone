@@ -1,6 +1,6 @@
 linters:
   eslint:
-    config: './.eslintrc.json'
+    config: './eslint.config'
 files:
   ignore:
     - './src/assets/main.css.*'
