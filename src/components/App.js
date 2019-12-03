@@ -15,7 +15,11 @@ class App extends React.Component {
         <BrowserRouter>
           <div>
             <Navbar />
-            <Route path="/" exact render={props => <CourseList {...props} />} />
+            <Route
+              path="/Courses_Capstone"
+              exact
+              render={props => <CourseList {...props} />}
+            />
             <Route
               path="/favourites"
               exact
