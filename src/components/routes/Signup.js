@@ -24,11 +24,9 @@ class Signup extends Component {
   };
   render() {
     const { username, email, password, password_confirmation } = this.state;
-    const { currentUser, jwt } = this.props;
     return (
-      <div>
-        <div>{`${currentUser.username}'s token =  ${jwt}`}</div>
-        <form onSubmit={this.handleSubmit}>
+      <div className="formArea signUpArea">
+        <form onSubmit={this.handleSubmit} className="form signupForm">
           <input
             type="text"
             placeholder="username"
@@ -59,7 +57,9 @@ class Signup extends Component {
             value={password_confirmation}
             onChange={this.handleInputChange}
           />
-          <button type="submit">Signup</button>
+          <button type="submit" className="formButton">
+            Signup
+          </button>
         </form>
       </div>
     );

@@ -13,7 +13,7 @@ class FilterCourses extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="select-style">
         <select onChange={this.onChange}>
           {FILTERS.map(c => (
             <option key={c} value={c === 'All' ? '' : c}>

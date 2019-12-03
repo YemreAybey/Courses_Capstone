@@ -12,23 +12,49 @@ class Navbar extends React.Component {
     const { currentUser } = this.props;
     if (currentUser.status === 'No Login') {
       return (
-        <div>
-          <Link to="/">CapCourses </Link>
-          <Link to="/favourites">Favourites</Link>
-          <Link to="/signup">Signup</Link>
-          <Link to="/login">Login</Link>
-        </div>
+        <>
+          <div>
+            <Link to="/" className="brand">
+              CapCourses
+            </Link>
+          </div>
+          <div className="navbar">
+            <Link to="/favourites" className="navLink">
+              Favourites
+            </Link>
+            <div className="rightNav">
+              <Link to="/signup" className="navLink">
+                Signup
+              </Link>
+              <Link to="/login" className="navLink">
+                Login
+              </Link>
+            </div>
+          </div>
+        </>
       );
     } else {
       return (
-        <div>
-          <Link to="/">CapCourses </Link>
-          <Link to="/favourites">Favourites</Link>
-          <span> {currentUser.user}</span>
-          <button type="button" onClick={this.handleLogOut}>
-            Log Out
-          </button>
-        </div>
+        <>
+          <div>
+            <Link to="/" className="brand">
+              CapCourses
+            </Link>
+          </div>
+          <div className="navbar">
+            <Link to="/favourites" className="navLink">
+              Favourites
+            </Link>
+            <div className="rightNav">
+              <span className="navLink username">
+                {currentUser.user.toUpperCase()}
+              </span>
+              <span onClick={this.handleLogOut} className="navLink logout">
+                Log Out
+              </span>
+            </div>
+          </div>
+        </>
       );
     }
   }

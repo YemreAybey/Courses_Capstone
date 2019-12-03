@@ -2,6 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addToFavs } from '../actions';
 import { getFavourites } from '../actions';
+import reactLogo from '../assets/imgs/react-logo.png';
+import rubyLogo from '../assets/imgs/ruby-logo.png';
+import railsLogo from '../assets/imgs/rails-logo.png';
+import jsLogo from '../assets/imgs/js-logo.png';
 
 class CourseDetail extends React.Component {
   componentDidMount() {
@@ -28,21 +32,36 @@ class CourseDetail extends React.Component {
       return <div>This is one of your favourite courses</div>;
     } else {
       return (
-        <button type="button" onClick={this.handleClick}>
-          Add to Favourites
-        </button>
+        <span className="favButton" onClick={this.handleClick}>
+          <i className="fas fa-star"></i>
+          <span>Add to Favourites</span>
+        </span>
       );
     }
   };
   render() {
-    const { author, detail } = this.props.selectedCourse;
+    const { author, detail, duration } = this.props.selectedCourse;
+    const source =
+      detail === 'React'
+        ? reactLogo
+        : detail === 'Rails'
+        ? railsLogo
+        : detail === 'Ruby'
+        ? rubyLogo
+        : jsLogo;
     if (!author) {
-      return <div>No Book Chosen </div>;
+      return (
+        <div className="noBook">
+          <span>No Book Chosen </span>
+        </div>
+      );
     } else {
       return (
-        <div>
-          <div>{author}</div>
+        <div className="courseArea">
+          <img src={source} alt="logo" />
           <div>{detail}</div>
+          <div>{author}</div>
+          <div>{duration}</div>
           {this.checkCourseInFavs()}
         </div>
       );

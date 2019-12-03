@@ -1,0 +1,26 @@
+.favButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c513af;
+  height: 30px;
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.fas.fa-star {
+  margin-right: 3px;
+}
+
+.noBook {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: black;
+  font-size: 30px;
+  background-color: rgb(178, 183, 209);
+}
+.noBook span {
+  text-align: center;
+}

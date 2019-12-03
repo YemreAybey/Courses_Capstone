@@ -1,0 +1,16 @@
+select {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #c513af;
+  border-radius: 4px;
+  background-color: beige;
+}
+
+select:focus {
+  outline: none;
+}
+
+.select-style {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
