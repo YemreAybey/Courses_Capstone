@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchCourses } from '../actions/index';
-import FilterCourses from '../components/FilterCourses';
 import Course from '../components/Course';
+import FilterCourses from '../components/FilterCourses';
 
 class CourseList extends Component {
   componentDidMount() {
@@ -19,10 +19,13 @@ class CourseList extends Component {
     const filteredCourses = filterCourses(courses, filter);
     return (
       <div>
-        <FilterCourses />
+        <div>
+          <FilterCourses />
+        </div>
         {filteredCourses.map(c => (
           <Course
             key={c.id}
+            id={c.id}
             author={c.author}
             duration={c.duration}
             detail={c.detail}
