@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import FilterCourses from '../components/FilterCourses';
 import { logOut } from '../actions';
 
 class Navbar extends React.Component {

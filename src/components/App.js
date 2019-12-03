@@ -6,7 +6,6 @@ import Signup from '../components/routes/Signup';
 import Navbar from '../components/Navbar';
 import Favourites from '../containers/Favourites';
 import CourseDetail from '../containers/CourseDetail';
-import Course from '../components/Course';
 
 class App extends React.Component {
   render() {
