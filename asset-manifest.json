@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/courses/static/css/main.a91b271d.chunk.css",
+    "main.js": "/courses/static/js/main.8c8bfadc.chunk.js",
+    "main.js.map": "/courses/static/js/main.8c8bfadc.chunk.js.map",
+    "runtime-main.js": "/courses/static/js/runtime-main.2c81a11f.js",
+    "runtime-main.js.map": "/courses/static/js/runtime-main.2c81a11f.js.map",
+    "static/js/2.5563ef0c.chunk.js": "/courses/static/js/2.5563ef0c.chunk.js",
+    "static/js/2.5563ef0c.chunk.js.map": "/courses/static/js/2.5563ef0c.chunk.js.map",
+    "index.html": "/courses/index.html",
+    "precache-manifest.028ec2414d4dfa0ad227363bd886ef36.js": "/courses/precache-manifest.028ec2414d4dfa0ad227363bd886ef36.js",
+    "service-worker.js": "/courses/service-worker.js",
+    "static/css/main.a91b271d.chunk.css.map": "/courses/static/css/main.a91b271d.chunk.css.map",
+    "static/media/rails-logo.png": "/courses/static/media/rails-logo.8614e1a4.png",
+    "static/media/react-logo.png": "/courses/static/media/react-logo.83fb4e93.png",
+    "static/media/ruby-logo.png": "/courses/static/media/ruby-logo.9beaf80c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2c81a11f.js",
+    "static/js/2.5563ef0c.chunk.js",
+    "static/css/main.a91b271d.chunk.css",
+    "static/js/main.8c8bfadc.chunk.js"
+  ]
+}
