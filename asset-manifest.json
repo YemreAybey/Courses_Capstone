@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/courses/static/css/main.a91b271d.chunk.css",
-    "main.js": "/courses/static/js/main.20c41e93.chunk.js",
-    "main.js.map": "/courses/static/js/main.20c41e93.chunk.js.map",
-    "runtime-main.js": "/courses/static/js/runtime-main.2c81a11f.js",
-    "runtime-main.js.map": "/courses/static/js/runtime-main.2c81a11f.js.map",
-    "static/js/2.5563ef0c.chunk.js": "/courses/static/js/2.5563ef0c.chunk.js",
-    "static/js/2.5563ef0c.chunk.js.map": "/courses/static/js/2.5563ef0c.chunk.js.map",
-    "index.html": "/courses/index.html",
-    "precache-manifest.fec1b6b17700b1da5b6841c0347eb0cf.js": "/courses/precache-manifest.fec1b6b17700b1da5b6841c0347eb0cf.js",
-    "service-worker.js": "/courses/service-worker.js",
-    "static/css/main.a91b271d.chunk.css.map": "/courses/static/css/main.a91b271d.chunk.css.map",
-    "static/media/rails-logo.png": "/courses/static/media/rails-logo.8614e1a4.png",
-    "static/media/react-logo.png": "/courses/static/media/react-logo.83fb4e93.png",
-    "static/media/ruby-logo.png": "/courses/static/media/ruby-logo.9beaf80c.png"
+    "main.css": "/Courses_Capstone/static/css/main.a91b271d.chunk.css",
+    "main.js": "/Courses_Capstone/static/js/main.20c41e93.chunk.js",
+    "main.js.map": "/Courses_Capstone/static/js/main.20c41e93.chunk.js.map",
+    "runtime-main.js": "/Courses_Capstone/static/js/runtime-main.88e8e16a.js",
+    "runtime-main.js.map": "/Courses_Capstone/static/js/runtime-main.88e8e16a.js.map",
+    "static/js/2.5563ef0c.chunk.js": "/Courses_Capstone/static/js/2.5563ef0c.chunk.js",
+    "static/js/2.5563ef0c.chunk.js.map": "/Courses_Capstone/static/js/2.5563ef0c.chunk.js.map",
+    "index.html": "/Courses_Capstone/index.html",
+    "precache-manifest.462c9ed13167d04eec0771d35dadb1de.js": "/Courses_Capstone/precache-manifest.462c9ed13167d04eec0771d35dadb1de.js",
+    "service-worker.js": "/Courses_Capstone/service-worker.js",
+    "static/css/main.a91b271d.chunk.css.map": "/Courses_Capstone/static/css/main.a91b271d.chunk.css.map",
+    "static/media/rails-logo.png": "/Courses_Capstone/static/media/rails-logo.8614e1a4.png",
+    "static/media/react-logo.png": "/Courses_Capstone/static/media/react-logo.83fb4e93.png",
+    "static/media/ruby-logo.png": "/Courses_Capstone/static/media/ruby-logo.9beaf80c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.2c81a11f.js",
+    "static/js/runtime-main.88e8e16a.js",
     "static/js/2.5563ef0c.chunk.js",
     "static/css/main.a91b271d.chunk.css",
     "static/js/main.20c41e93.chunk.js"
