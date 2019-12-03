@@ -1,0 +1,13 @@
+img {
+  width: 200px;
+  height: 200px;
+}
+.courseArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #c513af;
+  padding: 3px;
+  margin-bottom: 10px;
+}
