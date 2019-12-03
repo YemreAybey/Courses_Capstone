@@ -6,6 +6,7 @@ import Signup from '../components/routes/Signup';
 import Navbar from '../components/Navbar';
 import Favourites from '../containers/Favourites';
 import CourseDetail from '../containers/CourseDetail';
+import Footer from './Footer';
 
 class App extends React.Component {
   render() {
@@ -27,6 +28,7 @@ class App extends React.Component {
               exact
               render={props => <CourseDetail {...props} />}
             />
+            <Footer />
           </div>
         </BrowserRouter>
       </div>

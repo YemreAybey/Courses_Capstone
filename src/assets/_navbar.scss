@@ -1,0 +1,32 @@
+.navbar {
+  widows: 100%;
+  display: flex;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+.brand {
+  font-size: 40px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #c513af;
+}
+.navLink {
+  color: #232a38;
+  font-weight: bold;
+  text-decoration: none;
+}
+.rightNav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 115px;
+}
+.username {
+  font-size: 13px;
+  text-decoration: none;
+  color: #c513af;
+}
+.logout {
+  cursor: pointer;
+}

@@ -22,8 +22,8 @@ class Login extends Component {
   render() {
     const { email, password } = this.state;
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <div className="formArea">
+        <form className="form" onSubmit={this.handleSubmit}>
           <input
             type="text"
             placeholder="email"
@@ -39,7 +39,9 @@ class Login extends Component {
             value={password}
             onChange={this.handleInputChange}
           />
-          <button type="submit">Login</button>
+          <button type="submit" className="formButton">
+            Login
+          </button>
         </form>
       </div>
     );

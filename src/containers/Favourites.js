@@ -13,9 +13,17 @@ class Favourites extends Component {
   render() {
     const { favs, currentUser } = this.props;
     if (currentUser.status === 'No Login') {
-      return <div>Please Login To See Your Favourite Courses</div>;
+      return (
+        <div className="noBook">
+          <span>Please Login To See Your Favourite Courses</span>
+        </div>
+      );
     } else if (!favs[0]) {
-      return <div>You don't have any Favourite course</div>;
+      return (
+        <div className="noBook">
+          <span>You don't have any Favourite course</span>
+        </div>
+      );
     } else {
       return (
         <div>
