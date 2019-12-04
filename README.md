@@ -33,7 +33,7 @@ For the backend I've used rails. For now you can see courses, make a filter sear
 - Create-React-App
 - SCSS
 
-### ✨ [Live Demo]()
+### ✨ [Live Demo](https://capcourses.herokuapp.com/)
 
 ## Usage
 
