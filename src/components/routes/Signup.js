@@ -25,7 +25,7 @@ class Signup extends Component {
   render() {
     const { username, email, password, password_confirmation } = this.state;
     return (
-      <div className="formArea signUpArea">
+      <section className="formArea signUpArea">
         <form onSubmit={this.handleSubmit} className="form signupForm">
           <input
             type="text"
@@ -61,7 +61,7 @@ class Signup extends Component {
             Signup
           </button>
         </form>
-      </div>
+      </section>
     );
   }
 }

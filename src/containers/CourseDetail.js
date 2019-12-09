@@ -15,6 +15,24 @@ class CourseDetail extends React.Component {
     }
   }
 
+  createFavIcon = () => {
+    const { favs, id } = this.props;
+    const isInfav = favs.some(f => f.id === id);
+    if (isInfav) {
+      return (
+        <span className="favIcon">
+          <i className="fas fa-heart faved"></i>
+        </span>
+      );
+    } else {
+      return (
+        <span className="favIcon">
+          <i className="fas fa-heart unfaved"></i>
+        </span>
+      );
+    }
+  };
+
   handleClick = () => {
     const { selectedCourse, addToFavs, currentUser } = this.props;
     if (currentUser.status === 'Logged In') {
@@ -29,12 +47,12 @@ class CourseDetail extends React.Component {
       c => c.author === selectedCourse.author
     );
     if (doesContainCourse) {
-      return <div>This is one of your favourite courses</div>;
+      return <span>Your Favourite</span>;
     } else {
       return (
         <span className="favButton" onClick={this.handleClick}>
           <i className="fas fa-star"></i>
-          <span>Add to Favourites</span>
+          <span>Add to Favs</span>
         </span>
       );
     }
@@ -51,19 +69,24 @@ class CourseDetail extends React.Component {
         : jsLogo;
     if (!author) {
       return (
-        <div className="noBook">
+        <section className="noBook">
           <span>No Book Chosen </span>
-        </div>
+        </section>
       );
     } else {
       return (
-        <div className="courseArea">
-          <img src={source} alt="logo" />
-          <div>{detail}</div>
-          <div>{author}</div>
-          <div>{duration}</div>
-          {this.checkCourseInFavs()}
-        </div>
+        <section className="detailSection">
+          <article className="courseArea detailedCourse">
+            <div className="imgArea">
+              <img src={source} alt="logo" />
+              {this.createFavIcon()}
+            </div>
+            <div className="courseInfo">{detail}</div>
+            <div className="courseInfo">{author}</div>
+            <div className="courseInfo">{duration}</div>
+            {this.checkCourseInFavs()}
+          </article>
+        </section>
       );
     }
   }

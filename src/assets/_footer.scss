@@ -5,8 +5,9 @@
   width: 100%;
   height: 100px;
   padding: 2px;
-  font-size: 15px;
-  color: gray;
+  font-size: 11px;
+  color: rgb(105, 102, 102);
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .footer-element {
@@ -17,5 +18,10 @@
 }
 
 .fas {
+  color: #969494;
+  font-size: 18px;
+}
+.fas.fa-plus-circle {
+  font-size: 30px;
   color: #c513af;
 }

@@ -22,7 +22,7 @@ class Login extends Component {
   render() {
     const { email, password } = this.state;
     return (
-      <div className="formArea">
+      <section className="formArea">
         <form className="form" onSubmit={this.handleSubmit}>
           <input
             type="text"
@@ -43,7 +43,7 @@ class Login extends Component {
             Login
           </button>
         </form>
-      </div>
+      </section>
     );
   }
 }
