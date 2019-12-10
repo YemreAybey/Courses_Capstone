@@ -6,8 +6,11 @@
 @import './courseDetail';
 @import './flash';
 @import './filterCourses';
+* {
+  box-sizing: border-box;
+}
 .main {
-  min-height: 100vh;
+  min-height: 170vh;
 }
 .footer {
   position: fixed;
