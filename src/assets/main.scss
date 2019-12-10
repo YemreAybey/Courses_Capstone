@@ -6,6 +6,13 @@
 @import './courseDetail';
 @import './flash';
 @import './filterCourses';
+.main {
+  min-height: 100vh;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+}
 .courseList {
   background-color: #f9f9f9;
   margin-top: 10px;

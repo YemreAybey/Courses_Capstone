@@ -28,7 +28,7 @@ class App extends React.Component {
     return (
       <div>
         <BrowserRouter>
-          <div>
+          <div className="main">
             <Navbar />
             <Flash />
             <Route
