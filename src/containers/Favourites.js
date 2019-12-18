@@ -14,28 +14,29 @@ class Favourites extends Component {
     const { favs, currentUser } = this.props;
     if (currentUser.status === 'No Login') {
       return (
-        <div className="noBook">
+        <section className="noBook">
           <span>Please Login To See Your Favourite Courses</span>
-        </div>
+        </section>
       );
     } else if (!favs[0]) {
       return (
-        <div className="noBook">
+        <section className="noBook">
           <span>You don't have any Favourite course</span>
-        </div>
+        </section>
       );
     } else {
       return (
-        <div>
+        <section className="courseList">
           {favs.map(c => (
             <Course
               key={c.id}
+              id={c.id}
               author={c.author}
               duration={c.duration}
               detail={c.detail}
             />
           ))}
-        </div>
+        </section>
       );
     }
   }

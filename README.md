@@ -9,6 +9,9 @@
   <a href="https://github.com/YemreAybey/Courses_Capstone/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
+  <a href="https://twitter.com/YunusAybey" target="_blank">
+    <img alt="Twitter: YunusAybey" src="https://img.shields.io/twitter/follow/YunusAybey.svg?style=social" />
+  </a>
 </p>
 
 <br>
@@ -33,7 +36,7 @@ For the backend I've used rails. For now you can see courses, make a filter sear
 - Create-React-App
 - SCSS
 
-### ✨ [Live Demo]()
+### ✨ [Live Demo](https://capcourses.herokuapp.com/)
 
 ## Usage
 

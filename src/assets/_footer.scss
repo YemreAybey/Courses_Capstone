@@ -2,11 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  height: 100px;
-  padding: 2px;
-  font-size: 15px;
-  color: gray;
+  width: 95%;
+  font-size: 11px;
+  color: rgb(105, 102, 102);
+  font-family: 'Source Sans Pro', sans-serif;
+  z-index: 500;
 }
 
 .footer-element {
@@ -17,5 +17,10 @@
 }
 
 .fas {
+  color: #969494;
+  font-size: 18px;
+}
+.fas.fa-plus-circle {
+  font-size: 30px;
   color: #c513af;
 }

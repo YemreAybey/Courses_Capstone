@@ -1,13 +1,43 @@
 img {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
 }
 .courseArea {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #c513af;
-  padding: 3px;
+  align-items: flex-start;
+  padding: 3px 3px 3px 8px;
   margin-bottom: 10px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.area {
+  display: inline-block;
+  width: 47%;
+  border: 1px solid rgb(226, 223, 223);
+  background-color: #ffffff;
+  margin: 2px 2px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px rgb(190, 187, 187);
+}
+.courseArea .courseInfo {
+  font-size: 12px;
+  color: #232a38;
+  font-weight: bold;
+}
+.faved {
+  font-size: 18px;
+  color: #c513af;
+}
+.unfaved {
+  font-size: 18px;
+  color: #c1b6b6;
+}
+.imgArea {
+  width: 100px;
+  height: 120px;
+}
+.favIcon {
+  position: relative;
+  left: 86%;
+  bottom: 14px;
 }

@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logOut } from '../actions';
+import ls from 'local-storage';
 
 class Navbar extends React.Component {
   handleLogOut = () => {
     const { logOut } = this.props;
+    ls.set('currentUser', null);
     logOut();
   };
   render() {
@@ -13,47 +15,47 @@ class Navbar extends React.Component {
     if (currentUser.status === 'No Login') {
       return (
         <>
-          <div>
+          <header>
             <Link to="/" className="brand">
-              CapCourses
+              <h1>CapCourses</h1>
             </Link>
-          </div>
-          <div className="navbar">
+          </header>
+          <nav className="navbar">
             <Link to="/favourites" className="navLink">
               Favourites
             </Link>
-            <div className="rightNav">
+            <section className="rightNav">
               <Link to="/signup" className="navLink">
                 Signup
               </Link>
               <Link to="/login" className="navLink">
                 Login
               </Link>
-            </div>
-          </div>
+            </section>
+          </nav>
         </>
       );
     } else {
       return (
         <>
-          <div>
+          <header>
             <Link to="/" className="brand">
-              CapCourses
+              <h1>CapCourses</h1>
             </Link>
-          </div>
-          <div className="navbar">
+          </header>
+          <nav className="navbar">
             <Link to="/favourites" className="navLink">
               Favourites
             </Link>
-            <div className="rightNav">
+            <section className="rightNav">
               <span className="navLink username">
                 {currentUser.user.toUpperCase()}
               </span>
               <span onClick={this.handleLogOut} className="navLink logout">
                 Log Out
               </span>
-            </div>
-          </div>
+            </section>
+          </nav>
         </>
       );
     }

@@ -5,6 +5,7 @@ import filterReducer from './filterReducer';
 import logInAndOutReducer from './login';
 import favReducer from './favReducer';
 import selectedCourseReducer from './selectedCourseReducer';
+import errorReducer from './errorReducer';
 
 export default combineReducers({
   courses: courseReducer,
@@ -12,4 +13,5 @@ export default combineReducers({
   currentUser: logInAndOutReducer,
   favs: favReducer,
   selectedCourse: selectedCourseReducer,
+  errorMessage: errorReducer,
 });

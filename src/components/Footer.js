@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <footer className="footer">
       <span className="footer-element">
         <i className="fas fa-search"></i>
         <div>Search</div>
@@ -22,7 +22,7 @@ const Footer = () => {
         <i className="fas fa-user"></i>
         <div>Profile</div>
       </span>
-    </div>
+    </footer>
   );
 };
 
