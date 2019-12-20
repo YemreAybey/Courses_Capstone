@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 
+import { reducer as formReducer} from 'redux-form'
 import courseReducer from './courseReducer';
 import filterReducer from './filterReducer';
 import logInAndOutReducer from './login';
@@ -14,4 +15,5 @@ export default combineReducers({
   favs: favReducer,
   selectedCourse: selectedCourseReducer,
   errorMessage: errorReducer,
+  form: formReducer,
 });

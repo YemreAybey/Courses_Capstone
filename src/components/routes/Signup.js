@@ -1,61 +1,46 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
 import { signup } from '../../actions';
 
 class Signup extends Component {
-  state = { username: '', email: '', password: '', password_confirmation: '' };
-
-  handleInputChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+  renderInput = ({ input, ph, meta }) => {
+    return (
+      <div>
+        <input {...input} placeholder={ph} />
+        {this.renderError(meta)}
+      </div>
+    );
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
+  renderError = ({ error, touched }) => {
+    if (touched && error) {
+      return <div className="error-field">{error}</div>;
+    }
+  };
+
+  handleSubmit = formValues => {
     const { signup } = this.props;
-    const userInfo = { ...this.state };
-    this.setState({
-      username: '',
-      email: '',
-      password: '',
-      password_confirmation: '',
-    });
-    signup(userInfo);
-    this.props.history.push('/');
+    signup(formValues);
   };
   render() {
-    const { username, email, password, password_confirmation } = this.state;
     return (
       <section className="formArea signUpArea">
-        <form onSubmit={this.handleSubmit} className="form signupForm">
-          <input
-            type="text"
-            placeholder="username"
-            name="username"
-            value={username}
-            onChange={this.handleInputChange}
-          />
-
-          <input
-            type="text"
-            placeholder="email"
+        <form
+          onSubmit={this.props.handleSubmit(this.handleSubmit)}
+          className="form signupForm"
+        >
+          <Field name="username" component={this.renderInput} ph="username" />
+          <Field
             name="email"
-            value={email}
-            onChange={this.handleInputChange}
+            component={this.renderInput}
+            ph="example@gmail.com"
           />
-
-          <input
-            type="text"
-            placeholder="password"
-            name="password"
-            value={password}
-            onChange={this.handleInputChange}
-          />
-          <input
-            type="text"
-            placeholder="password_confirmation"
+          <Field name="password" component={this.renderInput} ph="password" />
+          <Field
             name="password_confirmation"
-            value={password_confirmation}
-            onChange={this.handleInputChange}
+            component={this.renderInput}
+            ph="password_confirmation"
           />
           <button type="submit" className="formButton">
             Signup
@@ -65,5 +50,38 @@ class Signup extends Component {
     );
   }
 }
-const mapStateToProps = ({ currentUser }) => ({ currentUser });
-export default connect(mapStateToProps, { signup })(Signup);
+
+const validate = ({ username, email, password, password_confirmation }) => {
+  const errors = {};
+
+  if (!username) {
+    errors.username = 'Please enter username';
+  } else if (username.length < 3) {
+    errors.username = 'Username is too short';
+  }
+
+  const regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+  if (!email) {
+    errors.email = 'You must enter an email';
+  } else if (!regex.test(email)) {
+    errors.email = 'Please enter a proper email';
+  }
+
+  if (!password) {
+    errors.password = 'You must enter a password';
+  } else if (password.length < 6) {
+    errors.password = 'Password is too short';
+  }
+  if (!password_confirmation) {
+    errors.password_confirmation = 'Please confirm your password';
+  } else if (password_confirmation !== password) {
+    errors.password_confirmation = 'Not equal to password';
+  }
+  return errors;
+};
+
+const Wrapper = reduxForm({
+  form: 'SignUp Form',
+  validate,
+})(Signup);
+export default connect(null, { signup })(Wrapper);

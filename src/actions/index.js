@@ -1,6 +1,7 @@
 import coursesApi from '../api/axios';
 import jwt_decode from 'jwt-decode';
 import ls from 'local-storage';
+import history from '../history';
 
 const FETCH_COURSES = 'FETCH_COURSES';
 const CHANGE_FILTER = 'CHANGE_FILTER';
@@ -39,11 +40,12 @@ const signup = userInfo => async dispatch => {
         type: LOGIN,
         user,
       });
+      history.push('/');
     }
   } catch (err) {
     dispatch({
       type: CREATE_ERROR_MESSAGE,
-      message: 'Please Provide Proper Info',
+      message: 'Server problem please try later',
     });
   }
 };
@@ -66,11 +68,12 @@ const login = userInfo => async dispatch => {
         user,
       });
       ls.set('currentUser', user);
+      history.push('/');
     }
   } catch (err) {
     dispatch({
       type: CREATE_ERROR_MESSAGE,
-      message: 'Please Provide Proper Info',
+      message: 'There is no user with given info, please sign-up',
     });
   }
 };
