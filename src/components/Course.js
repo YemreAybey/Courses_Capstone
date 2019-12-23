@@ -15,6 +15,24 @@ class Course extends React.Component {
     selectCourse(course);
   };
 
+  createFavIcon = () => {
+    const { favs, id } = this.props;
+    const isInfav = favs.some(f => f.id === id);
+    if (isInfav) {
+      return (
+        <span className="favIcon">
+          <i className="fas fa-heart faved"></i>
+        </span>
+      );
+    } else {
+      return (
+        <span className="favIcon">
+          <i className="fas fa-heart unfaved"></i>
+        </span>
+      );
+    }
+  };
+
   render() {
     const { id, detail } = this.props;
     const source =
@@ -26,15 +44,17 @@ class Course extends React.Component {
         ? rubyLogo
         : jsLogo;
     return (
-      <div onClick={this.handleOnClick} className="courseArea">
-        <img src={source} alt="logo" />
-        <div>{this.props.detail}</div>
-        <div>{this.props.author}</div>
-        <div>{this.props.duration}</div>
-        <Link to={`course/${id}`} className="navLink">
-          Click To See
-        </Link>
-      </div>
+      <Link to={`course/${id}`} className="navLink area">
+        <article onClick={this.handleOnClick} className="courseArea">
+          <div className="imgArea">
+            <img src={source} alt="logo" />
+            {this.createFavIcon()}
+          </div>
+          <div className="courseInfo">{this.props.detail}</div>
+          <div className="courseInfo">{this.props.author}</div>
+          <div className="courseInfo">{this.props.duration}</div>
+        </article>
+      </Link>
     );
   }
 }
@@ -44,5 +64,8 @@ Course.propTypes = {
   detail: PropTypes.string.isRequired,
 };
 
-const mapStateToProps = ({ selectedCourse }) => ({ selectedCourse });
+const mapStateToProps = ({ selectedCourse, favs }) => ({
+  selectedCourse,
+  favs,
+});
 export default connect(mapStateToProps, { selectCourse })(Course);

@@ -4,7 +4,7 @@
   width: 80%;
   margin: 100px auto;
   justify-content: space-between;
-  height: 150px;
+  height: 180px;
   padding: 10px;
 }
 
@@ -35,9 +35,22 @@ input {
   height: 30px;
   font-weight: bold;
   font-size: large;
+  font-family: 'Lato', sans-serif;
 }
 
 .signUpArea {
-  height: 250px;
+  height: 320px;
   margin: 50px auto;
+}
+
+.error-field {
+  padding: 0 0 3px 0;
+  color: #774242;
+  display: flex;
+  align-items: center;
+  border: 1px solid #d86262;
+  background-color: #c07f7f;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  margin: 3px 0 15px 0;
 }

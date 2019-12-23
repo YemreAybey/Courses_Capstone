@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addToFavs } from '../actions';
+import { addToFavs, remFromFavs } from '../actions';
 import { getFavourites } from '../actions';
 import reactLogo from '../assets/imgs/react-logo.png';
 import rubyLogo from '../assets/imgs/ruby-logo.png';
@@ -15,6 +15,31 @@ class CourseDetail extends React.Component {
     }
   }
 
+  removeFromFavs = () => {
+    const { currentUser, selectedCourse, remFromFavs } = this.props;
+    if (currentUser.status === 'Logged In') {
+      remFromFavs(currentUser.token, selectedCourse);
+    }
+  };
+
+  createFavIcon = () => {
+    const { favs, selectedCourse } = this.props;
+    const isInfav = favs.some(f => f.id === selectedCourse.id);
+    if (isInfav) {
+      return (
+        <span className="favIcon" onClick={this.removeFromFavs}>
+          <i className="fas fa-heart faved"></i>
+        </span>
+      );
+    } else {
+      return (
+        <span className="favIcon" onClick={this.handleClick}>
+          <i className="fas fa-heart unfaved"></i>
+        </span>
+      );
+    }
+  };
+
   handleClick = () => {
     const { selectedCourse, addToFavs, currentUser } = this.props;
     if (currentUser.status === 'Logged In') {
@@ -25,16 +50,13 @@ class CourseDetail extends React.Component {
   };
   checkCourseInFavs = () => {
     const { favs, selectedCourse } = this.props;
-    const doesContainCourse = favs.some(
-      c => c.author === selectedCourse.author
-    );
+    const doesContainCourse = favs.some(c => c.id === selectedCourse.id);
     if (doesContainCourse) {
-      return <div>This is one of your favourite courses</div>;
+      return <span>Your Favourite</span>;
     } else {
       return (
-        <span className="favButton" onClick={this.handleClick}>
-          <i className="fas fa-star"></i>
-          <span>Add to Favourites</span>
+        <span className="favButton">
+          <span>Add to Favs by clicking the heart</span>
         </span>
       );
     }
@@ -51,19 +73,24 @@ class CourseDetail extends React.Component {
         : jsLogo;
     if (!author) {
       return (
-        <div className="noBook">
+        <section className="noBook">
           <span>No Book Chosen </span>
-        </div>
+        </section>
       );
     } else {
       return (
-        <div className="courseArea">
-          <img src={source} alt="logo" />
-          <div>{detail}</div>
-          <div>{author}</div>
-          <div>{duration}</div>
-          {this.checkCourseInFavs()}
-        </div>
+        <section className="detailSection">
+          <article className="courseArea detailedCourse">
+            <div className="imgArea">
+              <img src={source} alt="logo" />
+              {this.createFavIcon()}
+            </div>
+            <div className="courseInfo">{detail}</div>
+            <div className="courseInfo">{author}</div>
+            <div className="courseInfo">{duration}</div>
+            {this.checkCourseInFavs()}
+          </article>
+        </section>
       );
     }
   }
@@ -74,6 +101,8 @@ const mapStateToProps = ({ selectedCourse, favs, currentUser }) => ({
   favs,
   currentUser,
 });
-export default connect(mapStateToProps, { addToFavs, getFavourites })(
-  CourseDetail
-);
+export default connect(mapStateToProps, {
+  addToFavs,
+  getFavourites,
+  remFromFavs,
+})(CourseDetail);
