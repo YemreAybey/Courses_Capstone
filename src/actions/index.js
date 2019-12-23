@@ -114,7 +114,6 @@ const remFromFavs = (jwt, course) => async dispatch => {
     headers,
     data: { course_id: course.id },
   });
-  console.log(response);
   if (!response.data.error) {
     dispatch({ type: REMOVE_COURSE, course });
     dispatch({ type: CREATE_ERROR_MESSAGE, message: response.data.message });
