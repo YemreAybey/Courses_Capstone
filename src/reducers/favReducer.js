@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 const favReducer = (state = [], action) => {
   switch (action.type) {
     case 'GET_FAVS':
