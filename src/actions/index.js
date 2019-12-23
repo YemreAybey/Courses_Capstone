@@ -13,6 +13,7 @@ const ADD_COURSE = 'ADD_COURSE';
 const CLEAR_FAVS = 'CLEAR_FAVS';
 const CREATE_ERROR_MESSAGE = 'CREATE_ERROR_MESSAGE';
 const DELETE_ERROR_MESSAGE = 'DELETE_ERROR_MESSAGE';
+const REMOVE_COURSE = 'REMOVE_COURSE';
 
 const fetchCourses = () => async dispatch => {
   const response = await coursesApi.get('/courses');
@@ -105,6 +106,21 @@ const addToFavs = (jwt, course_id) => async dispatch => {
   }
 };
 
+const remFromFavs = (jwt, course) => async dispatch => {
+  const headers = {
+    Authorization: `Bearer ${jwt}`,
+  };
+  const response = await coursesApi.delete('/favourite', {
+    headers,
+    data: { course_id: course.id },
+  });
+  console.log(response);
+  if (!response.data.error) {
+    dispatch({ type: REMOVE_COURSE, course });
+    dispatch({ type: CREATE_ERROR_MESSAGE, message: response.data.message });
+  }
+};
+
 const deleteErrorMessage = () => ({ type: DELETE_ERROR_MESSAGE, message: '' });
 
 const createSession = data => ({ type: LOGIN, user: data });
@@ -125,4 +141,5 @@ export {
   deleteErrorMessage,
   createSession,
   deleteSession,
+  remFromFavs,
 };

@@ -3,12 +3,12 @@
   align-items: center;
   justify-content: center;
   color: #c513af;
-  height: 20px;
   background-color: lightgray;
   cursor: pointer;
   padding: 4px;
   border-radius: 5px;
   margin-top: 5px;
+  width: 100%;
 }
 
 .fas.fa-star {
@@ -39,4 +39,8 @@
 .detailedCourse {
   margin: 10px auto;
   padding: 5px;
+}
+.unfaved,
+.faved {
+  cursor: pointer;
 }
