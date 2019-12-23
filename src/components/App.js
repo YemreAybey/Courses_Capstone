@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ls from 'local-storage';
 import CourseList from '../containers/CourseList';
@@ -13,6 +13,7 @@ import Flash from './Flash';
 import FilterCourses from './FilterCourses';
 import { createSession } from '../actions';
 import { getFavourites } from '../actions';
+import history from '../history';
 
 class App extends React.Component {
   componentDidMount() {
@@ -27,7 +28,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <BrowserRouter>
+        <Router history={history}>
           <div className="main">
             <Navbar />
             <Flash />
@@ -55,7 +56,7 @@ class App extends React.Component {
             />
             <Footer />
           </div>
-        </BrowserRouter>
+        </Router>
       </div>
     );
   }

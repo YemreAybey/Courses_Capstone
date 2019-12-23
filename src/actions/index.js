@@ -1,6 +1,7 @@
 import coursesApi from '../api/axios';
 import jwt_decode from 'jwt-decode';
 import ls from 'local-storage';
+import history from '../history';
 
 const FETCH_COURSES = 'FETCH_COURSES';
 const CHANGE_FILTER = 'CHANGE_FILTER';
@@ -12,6 +13,7 @@ const ADD_COURSE = 'ADD_COURSE';
 const CLEAR_FAVS = 'CLEAR_FAVS';
 const CREATE_ERROR_MESSAGE = 'CREATE_ERROR_MESSAGE';
 const DELETE_ERROR_MESSAGE = 'DELETE_ERROR_MESSAGE';
+const REMOVE_COURSE = 'REMOVE_COURSE';
 
 const fetchCourses = () => async dispatch => {
   const response = await coursesApi.get('/courses');
@@ -39,11 +41,12 @@ const signup = userInfo => async dispatch => {
         type: LOGIN,
         user,
       });
+      history.push('/');
     }
   } catch (err) {
     dispatch({
       type: CREATE_ERROR_MESSAGE,
-      message: 'Please Provide Proper Info',
+      message: 'Server problem please try later',
     });
   }
 };
@@ -66,11 +69,12 @@ const login = userInfo => async dispatch => {
         user,
       });
       ls.set('currentUser', user);
+      history.push('/');
     }
   } catch (err) {
     dispatch({
       type: CREATE_ERROR_MESSAGE,
-      message: 'Please Provide Proper Info',
+      message: 'There is no user with given info, please sign-up',
     });
   }
 };
@@ -102,6 +106,21 @@ const addToFavs = (jwt, course_id) => async dispatch => {
   }
 };
 
+const remFromFavs = (jwt, course) => async dispatch => {
+  const headers = {
+    Authorization: `Bearer ${jwt}`,
+  };
+  const response = await coursesApi.delete('/favourite', {
+    headers,
+    data: { course_id: course.id },
+  });
+  console.log(response);
+  if (!response.data.error) {
+    dispatch({ type: REMOVE_COURSE, course });
+    dispatch({ type: CREATE_ERROR_MESSAGE, message: response.data.message });
+  }
+};
+
 const deleteErrorMessage = () => ({ type: DELETE_ERROR_MESSAGE, message: '' });
 
 const createSession = data => ({ type: LOGIN, user: data });
@@ -122,4 +141,5 @@ export {
   deleteErrorMessage,
   createSession,
   deleteSession,
+  remFromFavs,
 };
