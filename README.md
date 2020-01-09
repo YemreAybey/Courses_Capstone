@@ -18,8 +18,8 @@
     <img alt="Web Page" src="https://res.cloudinary.com/yemreaybey/image/upload/v1578408381/Portfolio/capcourses-portfolio_lewr1x.png"/>
   </a>
 </p>
-## Info
 
+## Info
 
 This project is part of a series of projects to be completed by students of [Microverse](https://www.microverse.org/ 'The Global School for Remote Software Developers!').
 
