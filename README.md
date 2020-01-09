@@ -13,18 +13,23 @@
     <img alt="Twitter: YunusAybey" src="https://img.shields.io/twitter/follow/YunusAybey.svg?style=social" />
   </a>
 </p>
+<p>
+  <a href="https://capcourses.herokuapp.com/" target="_blank">
+    <img alt="https://res.cloudinary.com/yemreaybey/image/upload/v1578408381/Portfolio/capcourses-portfolio_lewr1x.png" />
+  </a>
+</p>
 
 <br>
 
 This project is part of a series of projects to be completed by students of [Microverse](https://www.microverse.org/ 'The Global School for Remote Software Developers!').
 
-In this project, I worked on a project called **Capstone Courses** using react. There were no milestones but requirements. Instead of building a real-estate website I've created an online courses website.
+In this project, I worked on a project called **Capstone Courses** using react, redux and rails. There were no milestones but requirements. Instead of building a real-estate website I've created an online courses website. The web-site is only for mobile size devices for now
 
 The full project requirements can be found [here](https://www.notion.so/Final-Capstone-Project-Listings-App-f3610268057941e481d35b269da30f0c).
 
 ## Backend
 
-For the backend I've used rails. For now you can see courses, make a filter search among courses.You can sign-up, log-in and log-out. You can see rails-api app [here](https://github.com/YemreAybey/online-courses-api)
+For the backend I've used rails. For now you can see courses, make a filter search among courses.You can sign-up, log-in, log-out, add courses to your favourites and see your favourites. You can see rails-api app [here](https://github.com/YemreAybey/online-courses-api)
 
 ## Built With
 
@@ -73,6 +78,13 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 3. Commit your changes (git commit -am 'what this commit will fix/add/improve')
 4. Push to the branch (git push origin [chosen-name])
 5. Create a new Pull Request
+
+## Future Ideas
+
+- Make the app responsive.
+- Add a video for each course.
+- Create a better ui.
+- Add admin model so that admins can add new courses or delete the old ones.
 
 ## Show your support
 
