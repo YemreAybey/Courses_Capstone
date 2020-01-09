@@ -15,7 +15,7 @@
 </p>
 <p>
   <a href="https://capcourses.herokuapp.com/" target="_blank">
-    <img alt="Web Page" src="https://res.cloudinary.com/yemreaybey/image/upload/v1578408381/Portfolio/capcourses-portfolio_lewr1x.png" />
+    <img alt="Web Page" src="https://res.cloudinary.com/yemreaybey/image/upload/v1578408381/Portfolio/capcourses-portfolio_lewr1x.png" style="width: 400px; height:400px;"/>
   </a>
 </p>
 
