@@ -13,9 +13,9 @@
     <img alt="Twitter: YunusAybey" src="https://img.shields.io/twitter/follow/YunusAybey.svg?style=social" />
   </a>
 </p>
-<p>
+<p align="center">
   <a href="https://capcourses.herokuapp.com/" target="_blank">
-    <img alt="Web Page" src="https://res.cloudinary.com/yemreaybey/image/upload/v1578408381/Portfolio/capcourses-portfolio_lewr1x.png"/>
+    <img width="400" height="400" alt="Web Page" src="https://res.cloudinary.com/yemreaybey/image/upload/v1578408381/Portfolio/capcourses-portfolio_lewr1x.png"/>
   </a>
 </p>
 
