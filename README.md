@@ -23,7 +23,7 @@
 
 This project is part of a series of projects to be completed by students of [Microverse](https://www.microverse.org/ 'The Global School for Remote Software Developers!').
 
-In this project, I worked on a project called **Capstone Courses** using react, redux and rails. There were no milestones but requirements. Instead of building a real-estate website I've created an online courses website. The web-site is only for mobile size devices for now
+In this project, I worked on a project called **Capstone Courses** using react, redux and rails. There were no milestones but requirements. I've created an online course management website that allows users to add specific courses to their favourites or remove them and search for the courses that are related to a specific software language. The web-site is only for mobile size devices for now.
 
 The full project requirements can be found [here](https://www.notion.so/Final-Capstone-Project-Listings-App-f3610268057941e481d35b269da30f0c).
 
